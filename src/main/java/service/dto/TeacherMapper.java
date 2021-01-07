@@ -1,6 +1,6 @@
 package service.dto;
 
-import dal.TeacherEntity;
+import dal.persistence.TeacherEntity;
 
 public class TeacherMapper {
 

@@ -1,6 +1,6 @@
 package util;
 
-import dal.TeacherEntity;
+import dal.persistence.TeacherEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

@@ -1,6 +1,6 @@
 package pl;
 
-import controller.Response;
+import controller.response.Response;
 import controller.TeacherController;
 import service.dto.TeacherDto;
 

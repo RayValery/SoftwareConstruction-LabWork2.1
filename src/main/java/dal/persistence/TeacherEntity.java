@@ -1,4 +1,4 @@
-package dal;
+package dal.persistence;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

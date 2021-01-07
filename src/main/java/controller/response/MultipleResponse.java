@@ -1,4 +1,4 @@
-package controller;
+package controller.response;
 
 import java.util.Date;
 import java.util.List;

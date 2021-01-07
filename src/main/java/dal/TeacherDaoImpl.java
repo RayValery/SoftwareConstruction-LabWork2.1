@@ -1,5 +1,6 @@
 package dal;
 
+import dal.persistence.TeacherEntity;
 import exception.TeacherNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

@@ -22,7 +22,7 @@ public class TeacherController {
 
     private final TeacherManagementService service = new TeacherManagementServiceImpl();
 
-    public Response findTeacher(Integer teacherId){
+    public Response findTeacher(Integer teacherId) {
         try {
             TeacherDto teacher = service.findTeacher(teacherId);
             log.info(format("Found teacher with id=%s", teacherId));
@@ -33,25 +33,25 @@ public class TeacherController {
         }
     }
 
-    public MultipleResponse findAllTeachers(){
+    public MultipleResponse findAllTeachers() {
         List<TeacherDto> teachers = service.findAllTeachers();
         log.info(format("Found teacher with id: %s", teachers.stream().map(TeacherDto::getTeacherId)));
         return new MultipleResponse(new Date(), teachers);
     }
 
-    public Response addTeacher(TeacherDto teacherDto){
+    public Response addTeacher(TeacherDto teacherDto) {
         TeacherDto teacher = service.addTeacher(teacherDto);
         log.info(format("Added teacher with id=%s", teacher.getTeacherId()));
         return new TeacherResponse(new Date(), teacher);
     }
 
-    public Response updateTeacher(TeacherDto teacherDto){
+    public Response updateTeacher(TeacherDto teacherDto) {
         TeacherDto teacher = service.updateTeacher(teacherDto);
         log.info(format("Updated teacher with id=%s", teacher.getTeacherId()));
         return new TeacherResponse(new Date(), teacher);
     }
 
-    public Response removeTeacher(Integer teacherId){
+    public Response removeTeacher(Integer teacherId) {
         TeacherDto teacher = service.removeTeacher(teacherId);
         log.info(format("Removed teacher with id=%s", teacher.getTeacherId()));
         return new TeacherResponse(new Date(), teacher);

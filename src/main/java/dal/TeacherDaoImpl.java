@@ -10,12 +10,14 @@ import java.util.List;
 import static java.lang.String.format;
 import static util.HibernateSessionFactory.getSessionFactory;
 
-public class TeacherDaoImpl implements TeacherDao{
+public class TeacherDaoImpl implements TeacherDao {
 
     @Override
     public TeacherEntity findById(Integer id) {
         TeacherEntity teacherEntity = getSessionFactory().openSession().get(TeacherEntity.class, id);
-        if(teacherEntity==null) throw new TeacherNotFoundException(format("No teacher with such id %s", id));
+        if (teacherEntity == null) {
+            throw new TeacherNotFoundException(format("No teacher with such id %s", id));
+        }
         return teacherEntity;
     }
 
@@ -52,7 +54,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
     @Override
     public List<TeacherEntity> findAll() {
-        List<TeacherEntity> teachers = (List<TeacherEntity>)  getSessionFactory().openSession()
+        List<TeacherEntity> teachers = (List<TeacherEntity>) getSessionFactory().openSession()
                 .createQuery("From TeacherEntity").list();
         return teachers;
     }

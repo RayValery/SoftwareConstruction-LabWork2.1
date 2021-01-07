@@ -1,15 +1,15 @@
 package pl;
 
-import controller.response.Response;
 import controller.TeacherController;
+import controller.response.Response;
 import service.dto.TeacherDto;
 
 public class View {
     public static void main(String[] args) {
         TeacherController controller = new TeacherController();
 
-        TeacherDto teacher = new TeacherDto("Yuliia","Bezcorovaina",
-                "proffessor",1234567L);
+        TeacherDto teacher = new TeacherDto("Yuliia", "Bezcorovaina",
+                "proffessor", 1234567L);
 
         Response response = controller.addTeacher(teacher);
         System.out.println("Add new teacher: \n" + response.toString());
@@ -31,8 +31,8 @@ public class View {
         response = controller.removeTeacher(teacher.getTeacherId());
         System.out.println("Remove teacher: \n" + response.toString());
 
-        TeacherDto teacher2 = new TeacherDto("Olena","Grinenko",
-                "assistant",1234567L);
+        TeacherDto teacher2 = new TeacherDto("Olena", "Grinenko",
+                "assistant", 1234567L);
 
         controller.addTeacher(teacher2);
         response = controller.findAllTeachers();
